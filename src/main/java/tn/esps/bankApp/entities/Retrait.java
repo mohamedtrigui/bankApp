@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.math.BigDecimal;
@@ -15,6 +16,8 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper=true)
 public class Retrait extends Operation{
+    @Column(name="type_op", insertable = false, updatable = false)
+    protected String typeOp;
 
     @Builder
     public Retrait() {

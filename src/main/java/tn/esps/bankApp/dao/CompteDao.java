@@ -5,4 +5,5 @@ import tn.esps.bankApp.entities.Compte;
 
 public interface CompteDao extends JpaRepository<Compte, String> {
     Compte findByCodeCompte(String codeCompte);
+    Compte findById(Long id);
 }

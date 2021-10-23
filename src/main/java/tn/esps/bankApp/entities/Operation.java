@@ -21,7 +21,7 @@ public abstract class Operation implements Serializable {
     private Date dateOperation;
     private BigDecimal montant;
 
-    @ManyToOne(cascade= CascadeType.ALL,fetch= FetchType.LAZY)
+    @ManyToOne(cascade= CascadeType.ALL,fetch= FetchType.EAGER)
     private Compte compte;
 
     public Operation(Date dateOperation, BigDecimal montant, Compte compte) {

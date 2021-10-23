@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.math.BigDecimal;
@@ -14,6 +15,8 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper=true)
 public class Versement extends Operation {
+    @Column(name="type_op", insertable = false, updatable = false)
+    protected String typeOp;
 
     @Builder
     public Versement() {

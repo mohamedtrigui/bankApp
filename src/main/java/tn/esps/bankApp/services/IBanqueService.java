@@ -11,5 +11,5 @@ public interface IBanqueService {
     void verser(String codeCompte, BigDecimal montant);
     void retirer(String codeCompte, BigDecimal montant);
     void virement(String codeCompte1,String codeCompte2,BigDecimal montant);
-    Page<Operation> listOp(String codeCompte, int page, int size);
+    OperationsData listOp(String codeCompte, int page, int size);
 }

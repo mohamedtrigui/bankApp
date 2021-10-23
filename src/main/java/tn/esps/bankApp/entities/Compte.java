@@ -2,9 +2,8 @@ package tn.esps.bankApp.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,9 +13,7 @@ import java.util.Date;
 
 @Entity
 @Table(name ="t_comptes")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter @EqualsAndHashCode @NoArgsConstructor @AllArgsConstructor
 public class Compte implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,10 +22,15 @@ public class Compte implements Serializable {
     private Date dateCreation;
     private BigDecimal solde;
 
-    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-    @JsonIgnore
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    } ,fetch=FetchType.EAGER)
+    @NotNull
+    @JoinColumn(name="client_id")
     private Client client;
 
     @OneToMany(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY,mappedBy="compte")
+    @JsonIgnore
     private Collection<Operation> operations;
 }
