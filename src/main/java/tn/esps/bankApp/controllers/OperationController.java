@@ -5,12 +5,10 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tn.esps.bankApp.entities.Operation;
 import tn.esps.bankApp.services.BanqueServiceImpl;
-import tn.esps.bankApp.services.OperationsData;
+import tn.esps.bankApp.dto.OperationsData;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @RestController
 @RequestMapping("/operations")

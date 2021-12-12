@@ -1,8 +1,7 @@
 package tn.esps.bankApp.services;
 
-import org.springframework.data.domain.Page;
+import tn.esps.bankApp.dto.OperationsData;
 import tn.esps.bankApp.entities.Compte;
-import tn.esps.bankApp.entities.Operation;
 
 import java.math.BigDecimal;
 

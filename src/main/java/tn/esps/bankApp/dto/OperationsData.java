@@ -1,4 +1,4 @@
-package tn.esps.bankApp.services;
+package tn.esps.bankApp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

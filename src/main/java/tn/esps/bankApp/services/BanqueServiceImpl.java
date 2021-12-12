@@ -5,6 +5,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tn.esps.bankApp.dao.OperationDao;
+import tn.esps.bankApp.dto.OperationsData;
 import tn.esps.bankApp.entities.Compte;
 import tn.esps.bankApp.entities.Operation;
 import tn.esps.bankApp.entities.Retrait;
